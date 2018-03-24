@@ -1,34 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-  constructor (){
+  constructor(){
     super()
     this.state = {
-      message: ''
+      message: ""
     }
   }
-  
-  changeList(value){
-    this.setState({
-      message: value
-    })
-  }
 
 
-  render() {
-    return (
-      <div className="App">
-        <input 
-        type = "text"
-        onChange = {(event) => this.changeList( event.target.value ) }
-        />
-        <p> {this.state.message} </p>
-        
-      </div>
-    );
-  }
+myFunction(value){
+  this.setState({
+    message: value
+  })
+}
+
+
+render(){
+  return(
+    <div className = "App">
+      <input 
+      type = 'text'
+      onChange = { (event) => this.myFunction(event.target.value) }
+      />
+
+    <p> {this.state.message} </p>
+    </div>
+
+  );
+}
 }
 
 export default App;
