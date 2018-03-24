@@ -6,31 +6,28 @@ class App extends Component {
   constructor(){
     super()
     this.state = {
-      message: ""
+      message: ''
     }
   }
 
+  messageFunction(value){
+    this.setState({
+      message: value
+    })
+  }
 
-myFunction(value){
-  this.setState({
-    message: value
-  })
-}
+  render(){
+    return(
+      <div className = "App">
+        <input 
+        type = 'text'
+        onChange = {(event) => this.messageFunction(event.target.value)}
+        />
+        <p> {this.state.message} </p>
+      </div>
+    )
+  }
 
-
-render(){
-  return(
-    <div className = "App">
-      <input 
-      type = 'text'
-      onChange = { (event) => this.myFunction(event.target.value) }
-      />
-
-    <p> {this.state.message} </p>
-    </div>
-
-  );
-}
 }
 
 export default App;
