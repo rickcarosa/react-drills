@@ -3,27 +3,29 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-  constructor(){
+  constructor (){
     super()
     this.state = {
       message: ''
     }
   }
-
-  handleChange(value){
+  
+  changeList(value){
     this.setState({
       message: value
     })
   }
 
+
   render() {
     return (
       <div className="App">
         <input 
-        key = "text"
-        onChange = {(event) => this.handleChange(event.target.value)}
+        type = "text"
+        onChange = {(event) => this.changeList( event.target.value ) }
         />
         <p> {this.state.message} </p>
+        
       </div>
     );
   }
