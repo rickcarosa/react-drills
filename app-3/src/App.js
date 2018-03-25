@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
-import logo from "./logo.svg";
-import "./App.css";
+import logo from './logo.svg';
+import './App.css';
 
 class App extends Component {
   constructor(){
     super()
     this.state = {
       emptyString: '',
-      teams: ["Yankess", "Bills", "Sabres"]
+      teams: ["Bills", "Sabres", "Yankees", "Bulls"]
     }
   }
 
@@ -19,24 +19,25 @@ class App extends Component {
 
   render(){
 
-    let teamsToDisplay = this.state.teams.filter((element,index) => {
+    let teamsToDisplay = this.state.teams.filter((element, index) => {
       return element.includes(this.state.emptyString);
-    }).map((element, index) => {
+    }).map((element,index) => {
       return <h2 key = {index}>{element} </h2>
     })
-
     return(
-      <div className = "App">
+      <div className = "App" >
 
       <input 
-      onChange = { (event) => this.handleChange(event.target.value)} 
-      type = "text" 
+      type = "text"
+      onChange = { (event) => this.handleChange(event.target.value)}
       />
       {teamsToDisplay}
       </div>
 
     )
   }
+
+
 }
 
 export default App;
