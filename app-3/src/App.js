@@ -7,7 +7,7 @@ class App extends Component {
     super()
     this.state = {
       emptyString: '',
-      teams: ["Bills", "Sabres", "Yankees", "Bulls"]
+      teams: ["Bills","Sabres","Spurs","Bulls","Bisons",]
     }
   }
 
@@ -19,25 +19,23 @@ class App extends Component {
 
   render(){
 
-    let teamsToDisplay = this.state.teams.filter((element, index) => {
-      return element.includes(this.state.emptyString);
-    }).map((element,index) => {
-      return <h2 key = {index}>{element} </h2>
-    })
+      let teamsToDisplay = this.state.teams.filter((element,index) => {
+        return element.includes(this.state.emptyString);
+      }).map((element,index) => {
+        return <h2 key = {index}>{element} </h2>
+      })
+
     return(
-      <div className = "App" >
+      <div className = "App">
 
-      <input 
-      type = "text"
-      onChange = { (event) => this.handleChange(event.target.value)}
-      />
-      {teamsToDisplay}
+        <input 
+        type = "text"
+        onChange = {(event) => this.handleChange(event.target.value)}
+        />
+        {teamsToDisplay}
       </div>
-
     )
   }
-
-
 }
 
 export default App;
