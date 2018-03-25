@@ -1,34 +1,27 @@
 import React, {Component} from 'react';
-import Logo from './logo.svg';
+import logo from './logo.svg';
 import './App.css';
-
 
 class App extends Component {
   constructor(){
     super()
     this.state = {
-       teams: ["Yankees", "Bills", "Sabres"]
+      food: ["pizza", "chips", "ice cream"]
     }
   }
 
-
-
-
-  render() {
-
-    let favoriteTeams = this.state.teams.map((element, index) => {
+  render(){
+    let favoriteFoods = this.state.food.map((element, index) => {
       return(
-        <h2 key = {index}> {element} </h2> 
+        <h2 key = {index}> {element} </h2>
       )
     })
 
-    return (
+    return(
       <div className = "App">
-        {favoriteTeams}
+        {favoriteFoods}
       </div>
-    
     );
   }
 }
-
 export default App;
