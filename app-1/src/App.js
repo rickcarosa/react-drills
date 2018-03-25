@@ -6,27 +6,27 @@ class App extends Component {
   constructor(){
     super()
     this.state = {
-      message: ''
+      words: ''
     }
   }
 
   handleChange(value){
     this.setState({
-      message: value
+      words: value
     })
   }
 
   render(){
     return(
-      <div className = 'App'>
+      <div className = "App">
 
       <input 
-      type = "text"
+      type = 'text'
       onChange = {(event) => this.handleChange(event.target.value)}
       />
-      <p> {this.state.message} </p>
+      <p> {this.state.words}</p>
       </div>
-    )
+     )
   }
 }
 
